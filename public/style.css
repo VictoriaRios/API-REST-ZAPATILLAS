@@ -1,0 +1,12 @@
+header{
+    height: 15vh;
+}
+main{
+    min-height: 75vh;
+}
+h2{
+    text-decoration: underline;
+}
+footer{
+    height: 10vh;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="img/sneakers2_117769.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <title>API DE ZAPATILLAS</title>
+  </head>
+  <body>
+    <header class="d-flex bg bg-dark align-items-center justify-content-center gap-4">
+      <img src="img/sneakers2_117769.png" style="width: 5rem" alt="">
+      <h1 class="text-white">API DE ZAPATILLAS</h1>
+    </header>
+    <main class="container">
+      <div class="container mt-5 mb-5">
+        <h2 class="text-center ">¿Sobre qué trata esta API?</h2>
+        <p class="mt-5">
+          Esta API está diseñada para gestionar información sobre zapatillas. Proporciona las siguientes operaciones para interactuar con los datos:
+        </p>
+        <ul class="list-group  ">
+          <li class="list-group-item"><strong class="text-primary">GET:</strong> Recupera la lista completa de zapatillas disponibles.</li>
+          <li class="list-group-item"><strong class="text-primary">GET by ID:</strong> Obtiene información detallada de una zapatilla específica mediante su identificador único.</li>
+          <li class="list-group-item"><strong class="text-success">POST:</strong> Permite agregar nuevas zapatillas al sistema.</li>
+          <li class="list-group-item"><strong class="text-warning">PUT:</strong> Actualiza la información de una zapatilla existente, identificada por su ID.</li>
+          <li class="list-group-item"><strong class="text-danger">DELETE:</strong> Elimina una zapatilla del sistema utilizando su identificador único.</li>
+        </ul>
+        <p class="mt-4">Esta API es ideal para aplicaciones que requieran gestionar un catálogo de zapatillas, como tiendas en línea, inventarios o sistemas de recomendación de productos.</p>
+      </div>
+      <hr />
+      <div class="container mt-4">
+        <div class="row gap-4 mb-4">
+          <div class="card col ms-4">
+            <div class="card-body">
+              <span class="badge text-bg-primary">  GET </span>
+              <strong>/api/zapatillas</strong>
+              <p class="card-text mt-2">
+                Permite recuperar una lista completa de zapatillas disponibles en la API, proporcionando información detallada de cada una para facilitar su consulta o visualización en aplicaciones externas.
+              </p>
+            </div>
+          </div>
+          
+          
+
+        <div class="card col ms-4" style="width: 18rem">
+            <div class="card-body">
+                <span class="badge text-bg-primary ">GET BY ID </span>
+                <strong>/api/zapatillas/:id</strong>
+                <p class="card-text mt-2">
+                  Obtiene información específica de una zapatilla en particular, identificada mediante su ID único. Ideal para acceder a detalles puntuales de un producto.
+                </p>
+            </div>
+        </div>
+        </div>
+        <br>
+        <div class="row gap-4 mb-4">
+        <div class="card col ms-4" style="width: 18rem">
+            <div class="card-body">
+                <span class="badge text-bg-success ">POST </span>
+                <strong>/api/zapatillas</strong>
+                <p class="card-text mt-2">
+                  Permite agregar una nueva zapatilla al sistema. Se pueden enviar datos como nombre, precio y marca, que serán almacenados en la base de datos de la API.
+                </p>
+                <p>Este es el modelo que espera recibir la API:</p>
+                    <pre>
+                    {
+                        nombre: String,
+                        precio: Number,
+                        marca: String,
+                    }
+                    </pre>
+            </div>
+        </div>
+
+        <div class="card col ms-4" style="width: 18rem">
+            <div class="card-body">
+                <span class="badge text-bg-warning ">PUT </span>
+                <strong>/api/zapatillas/:id</strong>
+                <p class="card-text mt-2">
+                  Actualiza la información de una zapatilla existente en el sistema. Esta operación requiere un ID válido para identificar el registro que se desea modificar.
+
+
+                </p>
+                <p>Este es el modelo se mostrará al momento de editar:</p>
+                    <pre>
+                    {
+                        nombre: String,
+                        precio: Number,
+                        marca: String,
+                    }
+                    </pre>
+            </div>
+        </div>
+        </div>
+
+        <div class="row gap-4 mb-4">
+            <div class="card col ms-4 align-items-center" style="width: 18rem">
+                <div class="card-body">
+                    <span class="badge text-bg-danger ">DELETE </span>
+                    <strong>/api/zapatillas/:id</strong>
+                    <p class="card-text mt-2">
+                      Elimina del sistema una zapatilla específica utilizando su ID. Esta acción es irreversible y asegura que el registro se elimine por completo.
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    <footer class="d-flex bg bg-dark align-items-center justify-content-center">
+      <p class="text-white">
+        EMAE | Aplicaciones Web Progresivas | API de Zapatillas
+      </p>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Inicializar el tooltip de Bootstrap
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
+
+</html>
