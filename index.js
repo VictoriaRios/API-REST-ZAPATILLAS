@@ -20,9 +20,6 @@ app.get('/api/zapatillas/:id', async (req,res)=>{
     res.json(zapatilla);
 })
 
-// Middleware para analizar el cuerpo de la solicitud como JSON
-app.use(express.json());
-
 //Agregamos un producto nuevo
 app.post('/api/zapatillas', async (req, res) => {
     const zapatilla = req.body;
